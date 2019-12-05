@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1575319124 source:c:\users\sagna\desktop\projet\wde-algorithm\src\algorithm.cpp
+	"Algorithm.h"
+
+1575325869 c:\users\sagna\desktop\projet\wde-algorithm\src\algorithm.h
+	"Problem.h"
+	"Solution.h"
+	"SetUpParams.h"
+
+1575457920 c:\users\sagna\desktop\projet\wde-algorithm\src\problem.h
+
+1575560348 c:\users\sagna\desktop\projet\wde-algorithm\src\solution.h
+	<vector>
+	"Problem.h"
+
+1575560557 c:\users\sagna\desktop\projet\wde-algorithm\src\setupparams.h
+
+1575454579 source:c:\users\sagna\desktop\projet\wde-algorithm\src\benchmark.cpp
+	<cmath>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<vector>
+
+1575319173 source:c:\users\sagna\desktop\projet\wde-algorithm\src\problem.cpp
+	"Problem.h"
+
+1575319257 source:c:\users\sagna\desktop\projet\wde-algorithm\src\solution.cpp
+	"Solution.h"
+
+1575508497 source:c:\users\sagna\desktop\projet\wde-algorithm\src\wdea.cpp
+	<iostream>
+

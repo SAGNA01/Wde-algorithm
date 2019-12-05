@@ -21,3 +21,19 @@ const unsigned int SetUpParams::solution_size() const
 {
     return _solution_size;
 }
+void SetUpParams::independent_runs(const unsigned int runs)
+{
+    _independent_runs = runs;
+}
+void SetUpParams::nb_evolution_steps(const unsigned int steps)
+{
+    _nb_evolution_steps = steps;
+}
+void SetUpParams::population_size(const unsigned int pop_size)
+{
+    _population_size = pop_size;
+}
+void SetUpParams::solution_size(const unsigned int sol_size)
+{
+    _solution_size = sol_size;
+}
