@@ -32,7 +32,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="src/Algorithm.cpp" />
+		<Unit filename="src/Algorithm.h" />
+		<Unit filename="src/Benchmark.cpp" />
+		<Unit filename="src/Benchmark.h" />
+		<Unit filename="src/Problem.cpp" />
+		<Unit filename="src/Problem.h" />
+		<Unit filename="src/SetUpParams.cpp" />
+		<Unit filename="src/SetUpParams.h" />
+		<Unit filename="src/Solution.cpp" />
+		<Unit filename="src/Solution.h" />
+		<Unit filename="src/Wdea.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

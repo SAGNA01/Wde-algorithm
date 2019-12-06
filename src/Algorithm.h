@@ -4,7 +4,6 @@
 #include"Solution.h"
 #include"SetUpParams.h"
 
-
 class Algorithm
 {
     public:
@@ -15,17 +14,14 @@ class Algorithm
 
 		// evaluate the current population
         void evaluate();
-
 	 	const vector<Solution*>& current_solutions() const;
 
 		double global_best_cost() const;
 		Solution& solution(const unsigned int index) const;
-
 		Solution& global_best_solution() const;
 
 		// main loop of the algorithm
 		void evolution();
-
     private:
         vector<Solution*> _population;     // individuals in population
 		vector<double> _fitness_values_of_current_population;

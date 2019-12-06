@@ -9,17 +9,16 @@ class Solution
 {
     public:
 
-        Solution (const Problem& pbm);
-		Solution (const Solution& sol);
-		~Solution();
+        Solution(const Problem& pbm);
+		Solution(const Solution& sol);
+		~Solution() = default;
 
 		const Problem& pbm() const;
-
 		void initialize();
 		double fitness();
-		double get_fitness();
+		double get_fitness() const;
 
-		vector<double>& get_solution();
+		vector<double>& get_solution() const;
 
 		double& get_position_in_solution(const int index);
         void  set_position_in_solution(const int index, const double value);
