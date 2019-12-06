@@ -29,7 +29,7 @@ double Discus(const std::vector<double>& sol)
 
 double Katsuura(const std::vector<double>& sol)
 {
-    int dim = sol.size();
+    /*int dim = sol.size();
     int m = 32;
 	double prod = 1;
 	for(int i = 0; i < dim; i++)
@@ -37,13 +37,32 @@ double Katsuura(const std::vector<double>& sol)
         double sum = 0;
 		for(int j = 1; j < m; j++)
         {
-  		    //int term = pow(2, j) * dim.valueOf[j];
-//			sum+= std::abs(term - round(term)) / pow(2, j);
+  		    int term = pow(2, j) * dim[i];
+    		sum+= std::abs(term - round(term)) / pow(2, j);
 
 		}
     prod *= pow(1 + ((i + 1) * sum), 10.0/ pow(dim,1.2));
     }
 	return (10.0 / dim * dim) * prod - (10.0 / dim * dim);
+	*/
+
+	double temp, temp1, temp2, temp3;
+	temp3 = pow(1.0 * sol.size(), 1.2);
+	double f = 1.0;
+	for(int i = 0; i < sol.size(); i++)
+    {
+        temp = 0.0;
+        for(int j = 0; j < 32; i++)
+        {
+            temp1 = pow(2.0, j);
+            temp2 = temp1 * sol[i];
+            temp += abs(temp2 - floor(temp2 * 0.5))/temp1;
+        }
+        f *= pow(1.0 + (i + 1) * temp, 10.0/temp3);
+    }
+    temp1 = 10.0 / sol.size() / sol.size();
+    f = f* temp1 - temp1;
+    return f;
 }
 
 
