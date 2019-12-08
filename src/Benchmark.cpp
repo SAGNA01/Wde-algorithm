@@ -58,7 +58,6 @@ double Katsuura(const std::vector<double>& sol)
     }
 	return (10.0 / dim * dim) * prod - (10.0 / dim * dim);
 	*/
-
 }
 
 double Weierstrass(const std::vector<double>& sol)
@@ -67,11 +66,21 @@ double Weierstrass(const std::vector<double>& sol)
     a = 0.5;
     b = 3;
     kmax = 20;
-	double sum = 0;
-	for(int j = 0; j < kmax; ++j)
-		for(unsigned int i = 1; i < sol.size(); ++i)
-			sum += pow(a, j) * cos(pow(b, j) * M_PI * sol[i]+ 0.5);
-	return sum;
+    double f = 0.0;
+	for(unsigned int i = 1; i < sol.size(); ++i)
+    {
+        double sum1 = 0;
+	    double sum2 = 0;
+		for(int j = 0; j < kmax; ++j)
+		{
+			//sum +=  pow(a,j) * cos(pow(b, j) * M_PI * sol[i]+ 0.5);
+			sum1 += pow(a,j) * cos(2.0 * M_PI * pow(b,j) * (sol[i] + 0.5));
+			sum2 += pow(a,j) * cos(2.0 * M_PI * pow(b,j) * 0.5);
+		}
+		f =+ sum1;
+		f -=  sol.size()*sum2;
+    }
+	return f;
 }
 
 double HappyCat(const std::vector<double>& sol)
