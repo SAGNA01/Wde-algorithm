@@ -10,26 +10,40 @@ float M_PI = 3.643674;
 
 double BentCigar(const std::vector<double>& sol)
 {
-    double sum = sol[0] * sol[0];
-    for(int i = 2; i <sol.size(); i++)
+    double sum = pow(sol[0],2);
+    for(unsigned int i = 2; i <sol.size(); i++)
     {
-        sum =+ pow(10.0, 6.0) * sol[i] * sol[i];
+        sum += pow(10.0, 6.0) * pow(sol[i],2);
     }
     return sum;
 }
+
 double Discus(const std::vector<double>& sol)
 {
-     double sum = (10.0, 6.0) * sol[0] * sol[0];
-     for(int i = 2; i < sol.size(); i++)
+     double sum = pow(10.0, 6.0) * pow(sol[0],2);
+     for(unsigned int i = 2; i < sol.size(); i++)
      {
-         sum =+ sol[i] * sol[i];
+         sum += pow(sol[i],2);
      }
      return sum;
 }
 
 double Katsuura(const std::vector<double>& sol)
 {
-    /*int dim = sol.size();
+    double d = 20;
+    double prod = 1.0;
+    for(unsigned int i = 0; i < sol.size(); i++)
+    {
+        double sum = 0;
+        for(int j = 0 ; j < 32; j++)
+        {
+            sum += (abs(pow(2,j) * sol[i] - floor(pow(2,j * sol[i]))) / pow(2,j));
+        }
+        prod *= pow((1 + i * sum ),10.0/(pow(d, 1.2)));
+    }
+    return ((10/pow(d,2)) * prod - (10/pow(d,2)));
+
+/*int dim = sol.size(); ===> dim = 20[i] ;
     int m = 32;
 	double prod = 1;
 	for(int i = 0; i < dim; i++)
@@ -37,34 +51,15 @@ double Katsuura(const std::vector<double>& sol)
         double sum = 0;
 		for(int j = 1; j < m; j++)
         {
-  		    int term = pow(2, j) * dim[i];
+  		    int term = pow(2, j) * dim;
     		sum+= std::abs(term - round(term)) / pow(2, j);
-
 		}
     prod *= pow(1 + ((i + 1) * sum), 10.0/ pow(dim,1.2));
     }
 	return (10.0 / dim * dim) * prod - (10.0 / dim * dim);
 	*/
 
-	double temp, temp1, temp2, temp3;
-	temp3 = pow(1.0 * sol.size(), 1.2);
-	double f = 1.0;
-	for(int i = 0; i < sol.size(); i++)
-    {
-        temp = 0.0;
-        for(int j = 0; j < 32; i++)
-        {
-            temp1 = pow(2.0, j);
-            temp2 = temp1 * sol[i];
-            temp += abs(temp2 - floor(temp2 * 0.5))/temp1;
-        }
-        f *= pow(1.0 + (i + 1) * temp, 10.0/temp3);
-    }
-    temp1 = 10.0 / sol.size() / sol.size();
-    f = f* temp1 - temp1;
-    return f;
 }
-
 
 double Weierstrass(const std::vector<double>& sol)
 {
@@ -74,7 +69,7 @@ double Weierstrass(const std::vector<double>& sol)
     kmax = 20;
 	double sum = 0;
 	for(int j = 0; j < kmax; ++j)
-		for(int i = 1; i < sol.size(); ++i)
+		for(unsigned int i = 1; i < sol.size(); ++i)
 			sum += pow(a, j) * cos(pow(b, j) * M_PI * sol[i]+ 0.5);
 	return sum;
 }
@@ -86,7 +81,7 @@ double HappyCat(const std::vector<double>& sol)
     sum = 0.0;
     r2 = 0.0;
     double f = 0.0;
-    for(int i = 0; i < sol.size(); i++)
+    for(unsigned int i = 0; i < sol.size(); i++)
     {
         //sol[i] -= 1.0;
         r2 += sol[i] * sol[i];
@@ -102,7 +97,7 @@ double HGBat(const std::vector<double>& sol)
     alpha = 1.0 / 0.4;
     sum = 0.0;
     r2 = 0.0;
-    for(int i = 0; i < sol.size(); i++)
+    for(unsigned int i = 0; i < sol.size(); i++)
     {
         //sol[i] = sol[i] - 1.0;
         r2 += sol[i] * sol[i];
@@ -111,3 +106,4 @@ double HGBat(const std::vector<double>& sol)
      double f = pow(abs(pow(r2, 2.0) - pow(sum, 2.0)), 2 * alpha) + (0.5 * r2 + sum) / sol.size() + 0.5;
      return f;
 }
+
