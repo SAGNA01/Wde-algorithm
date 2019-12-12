@@ -1,12 +1,16 @@
 #include<iostream>
+#include"Problem.h"
 
 using namespace std;
+
+
 int main()
 {
-    cout<<"bonjour le  monde"<<endl;
-    cout<<"bonjour le  monde"<<endl;
-    cout<<"bonjour le  monde"<<endl;
-    cout<<"bonjour le  monde"<<endl;
+    Problem problem = Problem();
+
+    problem.read(cin,problem);
+    problem.print(cout, problem);
+
 
     return 0;
 

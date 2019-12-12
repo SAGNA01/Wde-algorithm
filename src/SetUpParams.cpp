@@ -21,6 +21,11 @@ const unsigned int SetUpParams::solution_size() const
 {
     return _solution_size;
 }
+
+double SetUpParams::weigth() const
+{
+    return _weigth;
+}
 void SetUpParams::independent_runs(const unsigned int runs)
 {
     _independent_runs = runs;

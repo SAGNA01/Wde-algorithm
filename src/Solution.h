@@ -2,13 +2,14 @@
 #define SOLUTION_H
 #include <vector>
 #include"Problem.h"
+#include"SetUpParams.h"
 
 using namespace std;
 
 class Solution
 {
     public:
-
+        Solution();
         Solution(const Problem& pbm);
 		Solution(const Solution& sol);
 		~Solution() = default;
@@ -17,7 +18,6 @@ class Solution
 		void initialize();
 		double fitness();
 		double get_fitness() const;
-
 		vector<double>& get_solution() const;
 
 		double& get_position_in_solution(const int index);
