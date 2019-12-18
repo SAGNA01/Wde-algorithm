@@ -22,8 +22,7 @@ const Problem& Solution::pbm() const
 {
     return _pbm;
 }
-double Solution::fitness()
-{
+double Solution::fitness(){
     _fitness_current = (_pbm.fonction())(_solution);
     return _fitness_current;
 }
@@ -45,7 +44,7 @@ void Solution::initialize()
 
 vector<double>& Solution::get_solution() const
 {
-//    return vector<double&> _solution;
+     _solution;
 }
 
 double& Solution::get_position_in_solution(const int index)

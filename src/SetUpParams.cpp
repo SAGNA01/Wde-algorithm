@@ -1,5 +1,6 @@
 #include "SetupParams.h"
 
+
 SetUpParams::SetUpParams(unsigned int runs, unsigned int steps, unsigned int pop_size, unsigned int sol_size) :
                          _independent_runs{runs}, _nb_evolution_steps{steps},
                          _population_size{pop_size}, _solution_size{sol_size}
@@ -22,10 +23,6 @@ const unsigned int SetUpParams::solution_size() const
     return _solution_size;
 }
 
-double SetUpParams::weigth() const
-{
-    return _weigth;
-}
 void SetUpParams::independent_runs(const unsigned int runs)
 {
     _independent_runs = runs;

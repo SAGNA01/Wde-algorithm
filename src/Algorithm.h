@@ -11,13 +11,13 @@ class Algorithm
 		~Algorithm();
 		const SetUpParams& setup() const;
 	  	void initialize();
-        void evaluate();     //evaluate the current population
+        double evaluate();     //evaluate the current population
 
 	 	const vector<Solution*>& current_solutions() const;
 		double global_best_cost() const;
 		Solution& solution(const unsigned int index) const;
 
-		Solution& global_best_solution() const;
+		Solution global_best_solution() const;
         vector<Solution*>  mutation();
 
 		void evolution(); // main loop of the algorithm   //

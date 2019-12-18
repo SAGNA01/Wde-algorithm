@@ -66,24 +66,7 @@ double Katsuura(const std::vector<double>& sol)
         prod *= pow((1 + i * sum ),10.0/(pow(d, 1.2)));
     }
     return ((10/pow(d,2)) * prod - (10/pow(d,2)));
-
-/*int dim = sol.size(); ===> dim = 20[i] ;
-    int m = 32;
-	double prod = 1;
-	for(int i = 0; i < dim; i++)
-    {
-        double sum = 0;
-		for(int j = 1; j < m; j++)
-        {
-  		    int term = pow(2, j) * dim;
-    		sum+= std::abs(term - round(term)) / pow(2, j);
-		}
-    prod *= pow(1 + ((i + 1) * sum), 10.0/ pow(dim,1.2));
-    }
-	return (10.0 / dim * dim) * prod - (10.0 / dim * dim);
-	*/
 }
-
 
 double HappyCat(const std::vector<double>& sol)
 {
@@ -111,10 +94,10 @@ double HGBat(const std::vector<double>& sol)
     for(unsigned int i = 0; i < sol.size(); i++)
     {
         //sol[i] = sol[i] - 1.0;
-        r2 += sol[i] * sol[i];
+        r2 += pow(sol[i],2.0); //sol[i] * sol[i];
         sum += sol[i];
     }
-     double f = pow(abs(pow(r2, 2.0) - pow(sum, 2.0)), 2 * alpha) + (0.5 * r2 + sum) / sol.size() + 0.5;
-     return f;
+     double result = pow(abs(pow(r2, 2.0) - pow(sum, 2.0)), 2 * alpha) + (0.5 * r2 + sum) / sol.size() + 0.5;
+     return result;
 }
 

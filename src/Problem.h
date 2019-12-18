@@ -2,12 +2,13 @@
 #define PROBLEM_H
 #include<iostream>
 #include<vector>
+
 typedef double(*Fonction)(const std::vector<double>&);
 class Problem
 {
     public:
         Problem();
-        Problem(int fonction_id, int dim, double low_bound, double up_bound, Fonction f);
+        Problem(int dim, double low_bound, double up_bound, Fonction f);
         ~Problem();
         int dimension() const;
         double LowerBound() const;
@@ -15,10 +16,9 @@ class Problem
         void print(std::ostream& sortie, const Problem& pbm) const;
         void read(std::istream& entree, Problem& pbm);
         Fonction fonction() const;
-        void benchmarks();
+        double benchmarks(std::vector<double>& sol);
 
     private:
-        int _fonction_id;
         int _dimension;
 		double _LowerBound;
 		double _UpperBound;
