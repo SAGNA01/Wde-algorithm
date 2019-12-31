@@ -41,9 +41,9 @@ int main()
     SetUpParams setup = SetUpParams(30, 66, 30, 30);
 
 
+
 //   SetUpParams setup = SetUpParams();
    // Algorithm algoWDEA = Algorithm(problem);
-
 
     return 0;
 

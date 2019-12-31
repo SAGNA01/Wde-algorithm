@@ -6,7 +6,7 @@
 #include<stdlib.h>
 #include<vector>
 
-float M_PI = 3.643674;
+float M_PI = 3.14;
 
 double BentCigar(const std::vector<double>& sol)
 {

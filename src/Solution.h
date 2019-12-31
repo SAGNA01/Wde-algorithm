@@ -12,10 +12,12 @@ class Solution
         Solution();
         Solution(const Problem& pbm);
 		Solution(const Solution& sol);
+
 		~Solution() = default;
 
 		const Problem& pbm() const;
 		void initialize();
+		vector<double> mutation(int i , vector<Solution*> pop, SetUpParams setup);
 		double fitness();
 		double get_fitness() const;
 		vector<double>& get_solution() const;
