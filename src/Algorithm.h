@@ -14,21 +14,22 @@ class Algorithm
 		~Algorithm();
 		const SetUpParams& setup() const;
 	  	void initialize();
-        double evaluate();     //evaluate the current population
+        void evaluate();     //evaluate the current population
 
 	 	const vector<Solution*>& current_solutions() const;
-		double global_best_cost() const;
+		double global_best_cost() const;                                // pas encore defini
 		Solution& solution(const unsigned int index) const;
 
 		Solution global_best_solution() const;
-        void croisement();
-		void evolution(); // main loop of the algorithm   //
+		void evolution(); // main loop of the algorithm                // pas encore defini
 		void main();
     private:
         vector<Solution*> _population;     // individuals in population
 		vector<double> _fitness_values_of_current_population;
+        //Solution& _sol;
 		const SetUpParams& _setup;
 		Solution _global_best_solution;
+
 };
 
 #endif // ALGORITHM_H

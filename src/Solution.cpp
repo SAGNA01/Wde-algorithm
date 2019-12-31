@@ -7,40 +7,47 @@
 #include <fstream>
 #include<random>
 
-
 Solution::Solution(const Problem& pbm) : _pbm{pbm}
 {}
 
 Solution::Solution(const Solution& sol) : _pbm{sol._pbm}, _fitness_current{sol._fitness_current}
 {}
 
-double Solution::get_fitness() const
-{
-   return _fitness_current;
-}
-
-const Problem& Solution::pbm() const
-{
-    return _pbm;
-}
-double Solution::fitness(){
-    _fitness_current = (_pbm.fonction())(_solution);
-    return _fitness_current;
-}
-void Solution::initialize()
-{
+void Solution::initialize(){
     _solution.resize((unsigned long long int) _pbm.dimension());
 	double nbAleatoire, k, _min, _max;
     _min = _pbm.LowerBound();
     _max = _pbm.UpperBound();
 
-    for (unsigned int i = 0; i < _solution.size(); ++i)
-    {
+    for (unsigned int i = 0; i < _solution.size(); ++i){
         k = (double)rand() / (RAND_MAX+1);
 	    nbAleatoire = _min + k * (_max - _min);
-	    _solution[i]=(nbAleatoire);
+	    _solution[i] = (nbAleatoire);
 	}
-   //fitness();
+}
+
+const Problem& Solution::pbm() const{
+    return _pbm;
+}
+
+void Solution::fitness(){
+    _fitness_current = (_pbm.fonction())(_solution);
+}
+
+double Solution::get_fitness() const{
+   return _fitness_current;
+}
+
+vector<double>& Solution::get_solution() const{
+     _solution;
+}
+
+double& Solution::get_position_in_solution(const int index){
+    return _solution[index];
+}
+
+void Solution::set_position_in_solution(const int index, const double value){
+    _solution[index] = value;
 }
 
 vector<double>  Solution::mutation(int i, vector<Solution*> pop ,SetUpParams setup){
@@ -70,17 +77,3 @@ vector<double>  Solution::mutation(int i, vector<Solution*> pop ,SetUpParams set
     return mutant;
 }
 
-vector<double>& Solution::get_solution() const
-{
-     _solution;
-}
-
-double& Solution::get_position_in_solution(const int index)
-{
-    return _solution[index];
-}
-
-void Solution::set_position_in_solution(const int index, const double value)
-{
-    _solution[index] = value;
-}
