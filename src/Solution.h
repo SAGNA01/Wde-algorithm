@@ -5,7 +5,6 @@
 #include"SetUpParams.h"
 
 using namespace std;
-
 class Solution
 {
     public:
@@ -23,7 +22,6 @@ class Solution
         void  set_position_in_solution(const int index, const double value);
 
 		vector<double> mutation(int i , vector<Solution*> pop, SetUpParams setup);
-        void clear_solution();
 
     private:
         vector<double> _solution;

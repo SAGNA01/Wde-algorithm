@@ -1,7 +1,7 @@
 #include<iostream>
 #include"Problem.h"
 #include"Algorithm.h"
-
+#include"Benchmark.h"
 using namespace std;
 
 int menu()
@@ -19,7 +19,7 @@ int main()
 {
 
     cout<<"**************** Weighted differential evolution algorithm ***********"<<endl;
-    Problem problem = Problem();
+    Problem problem = Problem(30, -5, 5, BentCigar);
     int choice = menu();
     while(choice != 1)
     {
@@ -39,11 +39,8 @@ int main()
 
     problem.print(cout, problem);
     SetUpParams setup = SetUpParams(30, 66, 30, 30);
-
-
-
-//   SetUpParams setup = SetUpParams();
-   // Algorithm algoWDEA = Algorithm(problem);
+    Algorithm algoWDEA = Algorithm(problem, setup);
+    algoWDEA.main();
 
     return 0;
 

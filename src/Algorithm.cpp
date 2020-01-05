@@ -1,11 +1,7 @@
 #include "Algorithm.h"
 
-
 Algorithm::Algorithm(const Problem& pbm, const SetUpParams& setup) : _setup{setup}
-{
-    //_population.resize(_setup.population_size());
-    //initialize();
-}
+{}
 
 Algorithm::~Algorithm(){
     for(unsigned int i = 0; i < _setup.population_size(); i++)
@@ -60,7 +56,7 @@ void Algorithm::main(){
 		    normal_distribution<double> distribution(0.0, 1.0);
             int random = distribution(g);
 
-            // Generation of a trial population
+            //Generation of a trial population
             if(_setup.getCR() < random){
             _sol->mutation(i,_population,_setup);
             }else{
@@ -69,22 +65,20 @@ void Algorithm::main(){
             }
 
           for(unsigned int i = 0; i < mutants.size(); i++){
-          for(unsigned int j = 0; j < _setup.solution_size(); j++)
-          {
-            mutants[i]->fitness();
-            _population[j]->fitness();
-            if(mutants[i]->get_fitness() < _population[j]->get_fitness())
-            {
-               _population[j] = mutants[i];
-            }
-          }
-        }
+             for(unsigned int j = 0; j < _setup.solution_size(); j++)
+             {
+               mutants[i]->fitness();
+               _population[j]->fitness();
+               if(mutants[i]->get_fitness() < _population[j]->get_fitness())
+               {
+                 _population[j] = mutants[i];
+               }
+             }
+         }
      }
 
       //std::cout<<"\t\t\t\tExecution "<<r+1<<" : "<<best_fit<<"\t\t"<<worst_fit<<std::endl;
     }
-
-
 
 }
 

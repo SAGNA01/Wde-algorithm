@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1577803811 source:c:\users\sagna\desktop\projet\wde-algorithm\src\algorithm.cpp
+1577824343 source:c:\users\sagna\desktop\projet\wde-algorithm\src\algorithm.cpp
 	"Algorithm.h"
 
 1577811323 c:\users\sagna\desktop\projet\wde-algorithm\src\algorithm.h
@@ -14,7 +14,7 @@
 	<iostream>
 	<vector>
 
-1577806453 c:\users\sagna\desktop\projet\wde-algorithm\src\solution.h
+1577848161 c:\users\sagna\desktop\projet\wde-algorithm\src\solution.h
 	<vector>
 	"Problem.h"
 	"SetUpParams.h"
@@ -44,10 +44,11 @@
 	<fstream>
 	<random>
 
-1577720418 source:c:\users\sagna\desktop\projet\wde-algorithm\src\wdea.cpp
+1577826268 source:c:\users\sagna\desktop\projet\wde-algorithm\src\wdea.cpp
 	<iostream>
 	"Problem.h"
 	"Algorithm.h"
+	"Benchmark.h"
 
 1576171416 source:c:\users\sagna\desktop\projet\wde-algorithm\src\problem.cpp
 	"Problem.h"
