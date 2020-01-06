@@ -94,7 +94,7 @@ void Algorithm::main()
             {
 				bestFit = bestFitness();
 				worstFit = worstFitness();
-			}
+            }
         }
         evaluate();
         if(bestFitness() < bestFit)
