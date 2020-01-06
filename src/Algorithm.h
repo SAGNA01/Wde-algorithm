@@ -20,8 +20,11 @@ class Algorithm
 		double global_best_cost() const;                                // pas encore defini
 		Solution& solution(const unsigned int index) const;
 
+		Solution global_best_solution();
 		Solution global_best_solution() const;
-		void evolution(); // main loop of the algorithm                // pas encore defini
+		double bestFitness() const;
+		double worstFitness() const;
+ 		void evolution(); // main loop of the algorithm                // pas encore defini
 		void main();
     private:
         vector<Solution*> _population;     // individuals in population
@@ -30,6 +33,8 @@ class Algorithm
         const Problem& _pbm;
 		const SetUpParams& _setup;
 		Solution _global_best_solution;
+		double _lower_cost;
+		double _upper_cost;
 
 };
 

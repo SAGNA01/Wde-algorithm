@@ -30,7 +30,6 @@ int main(){
         choice = menu();
     }
     problem.print(cout, problem);
-    //Solution sol = Solution(problem);
     SetUpParams setup = SetUpParams(30, 66, 30, 30);
     Algorithm algoWDEA = Algorithm(problem, setup);
     algoWDEA.main();
