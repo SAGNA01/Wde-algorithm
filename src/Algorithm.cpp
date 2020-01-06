@@ -92,15 +92,15 @@ void Algorithm::main()
             }
             if(bestFitness() < bestFit)
             {
-				bestFit = bestFitness();
-				worstFit = worstFitness();
+                bestFit = bestFitness();
+                worstFit = worstFitness();
             }
         }
         evaluate();
         if(bestFitness() < bestFit)
         {
             bestFit = bestFitness();
-			worstFit = worstFitness();
+            worstFit = worstFitness();
         }
         std::cout<<"\t\t\tExecution "<<r+1<<" : "<<bestFit<<"\t\t"<<worstFit<<std::endl;
     }
