@@ -44,7 +44,6 @@ double Katsuura(const std::vector<double>& sol);
 */
 double HappyCat(const std::vector<double>& sol);
 
-
 /*
  HGBat function
  sol : Position de la solution a evaluer
