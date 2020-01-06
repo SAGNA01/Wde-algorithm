@@ -12,7 +12,6 @@ int menu(){
     } while(input<1 && input>3);
     return input;
 }
-
 int main(){
     cout<<"**************** Weighted differential evolution algorithm ***********"<<endl;
     Problem problem = Problem(30, -5, 5, BentCigar);
