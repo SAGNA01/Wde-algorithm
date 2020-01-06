@@ -7,10 +7,11 @@
 #include <fstream>
 #include<random>
 
+Solution::Solution() : _pbm{} {}
 Solution::Solution(const Problem& pbm) : _pbm{pbm}
 {}
 
-Solution::Solution(const Solution& sol) : _pbm{sol._pbm}, _fitness_current{sol._fitness_current}
+Solution::Solution(const Solution& sol) : _pbm{sol._pbm}// ,_fitness_current{sol._fitness_current}
 {}
 
 void Solution::initialize(){
@@ -39,7 +40,7 @@ double Solution::get_fitness() const{
 }
 
 vector<double>& Solution::get_solution() const{
-     _solution;
+    _solution;
 }
 
 double& Solution::get_position_in_solution(const int index){

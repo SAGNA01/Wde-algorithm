@@ -6,7 +6,7 @@
 #include<stdlib.h>
 #include<vector>
 
-float M_PI = 3.14;
+float M_PI = 3.1415926535897932;
 
 double BentCigar(const std::vector<double>& sol)
 {
@@ -50,7 +50,6 @@ double Weierstrass(const std::vector<double>& sol)
     }
 	return f;
 }
-
 
 double Katsuura(const std::vector<double>& sol)
 {

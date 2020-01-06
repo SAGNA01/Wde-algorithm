@@ -3,9 +3,7 @@
 #include<cmath>
 
 Problem::Problem() : _dimension{30}, _LowerBound{}, _UpperBound{}, _fonction{BentCigar}
-{
-
-}
+{}
 Problem::Problem(int dim, double low_bound, double up_bound, Fonction f) : _dimension{dim},
                                                                            _LowerBound{low_bound},
                                                                            _UpperBound{up_bound},
@@ -22,13 +20,11 @@ void Problem::print(std::ostream& sortie, const Problem& pbm) const
     sortie << "======================================================================" << std::endl;
 }
 
-Fonction Problem::fonction() const
-{
+Fonction Problem::fonction() const{
    return _fonction;
 }
 
-void Problem::read(std::istream& entree, Problem& pbm)
-{
+void Problem::read(std::istream& entree, Problem& pbm){
     int input;
     do{
          std::cout<<"1 : BentCigar function\n"<<"2 : Discus function\n"<<"3 : Weierstrass function\n"<<"4 : Katsuura function\n";
@@ -36,9 +32,8 @@ void Problem::read(std::istream& entree, Problem& pbm)
          std::cout<< "======================================================================" << std::endl;
     	 std::cout <<"       Function Id : ";
     } while(input< 1 && input>6);
-
 	    entree>>input;
-	    switch (input)
+    switch (input)
     {
 	case 1: // BentCigar function
 	    _fonction=BentCigar;
@@ -76,25 +71,19 @@ void Problem::read(std::istream& entree, Problem& pbm)
 		pbm._UpperBound = 30;
 		break;
 	}
-	//return entree;
 }
 
-int Problem::dimension() const
-{
+int Problem::dimension() const{
     return _dimension;
 }
 
-double Problem::LowerBound() const
-{
+double Problem::LowerBound() const{
     _LowerBound;
 }
 
-double Problem::UpperBound() const
-{
+double Problem::UpperBound() const{
     return _UpperBound;
 }
 
 Problem::~Problem()
-{
-
-}
+{}

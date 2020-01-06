@@ -4,31 +4,25 @@
 #include"Benchmark.h"
 using namespace std;
 
-int menu()
-{
+int menu(){
     int input;
-    do
-    {
+    do{
         std::cout<<"1 - Run the function\n2 - Change benchmark function\n3 - Quit"<<std::endl;
         std::cin>>input;
-    }   while(input<1 && input>3);
+    } while(input<1 && input>3);
     return input;
 }
 
-int main()
-{
-
+int main(){
     cout<<"**************** Weighted differential evolution algorithm ***********"<<endl;
     Problem problem = Problem(30, -5, 5, BentCigar);
     int choice = menu();
-    while(choice != 1)
-    {
-        switch(choice)
-        {
+    while(choice != 1){
+        switch(choice){
             default:
                 break;
             case 2:
-                problem.read(cin,problem);    //Switch benchmark = op read
+                problem.read(cin,problem);
                 cout<<endl;
                 break;
             case 3:
@@ -36,13 +30,12 @@ int main()
         }
         choice = menu();
     }
-
     problem.print(cout, problem);
+    //Solution sol = Solution(problem);
     SetUpParams setup = SetUpParams(30, 66, 30, 30);
     Algorithm algoWDEA = Algorithm(problem, setup);
     algoWDEA.main();
 
     return 0;
-
 }
 

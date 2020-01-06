@@ -1,6 +1,6 @@
 #include "Algorithm.h"
 
-Algorithm::Algorithm(const Problem& pbm, const SetUpParams& setup) : _setup{setup}
+Algorithm::Algorithm(const Problem& pbm, const SetUpParams& setup) : _pbm{pbm}, _setup{setup}
 {}
 
 Algorithm::~Algorithm(){
@@ -45,11 +45,9 @@ void Algorithm::main(){
     std::cout << "\t\t\t\t\t\t  Mielleur\t\tPires" << std::endl;
 
     for(unsigned int r = 0; r < _setup.independent_runs(); r++){
-        for( unsigned int iter = 0 ; iter < _setup.nb_evolution_steps(); iter++)
-        {
-
+        for( unsigned int iter = 0 ; iter < _setup.nb_evolution_steps(); iter++){
             vector<Solution*> mutants;
-            Solution* _sol;
+            Solution _sol{_pbm};
             for(unsigned int i = 0; i < _population.size(); i++){
 
             default_random_engine g;
@@ -58,7 +56,7 @@ void Algorithm::main(){
 
             //Generation of a trial population
             if(_setup.getCR() < random){
-            _sol->mutation(i,_population,_setup);
+            _sol.mutation(i,_population,_setup);
             }else{
                mutants[i] = _population[i];
              }

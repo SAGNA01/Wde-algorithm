@@ -8,6 +8,7 @@ using namespace std;
 class Solution
 {
     public:
+        Solution();
         Solution(const Problem& pbm);
 		Solution(const Solution& sol);
 
