@@ -15,13 +15,11 @@ class SetUpParams
 		void nb_evolution_steps(const unsigned int steps);
 		void population_size(const unsigned int pop_size);
 		void solution_size(const unsigned int sol_size);
-		//double getF();
 		double getCR()const;
 
 
     private:
-        const double CR = 0.9;
-        //const  double F = 0.5;
+        const double _CR = 0.9;                    // Crossover rate
         unsigned int   _independent_runs;         //number of independent runs
 		unsigned int   _nb_evolution_steps;      // number of iterations per run
 		unsigned int   _population_size;		// number of solutions in the population

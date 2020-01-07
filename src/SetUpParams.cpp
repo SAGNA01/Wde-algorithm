@@ -39,5 +39,5 @@ void SetUpParams::solution_size(const unsigned int sol_size){
 }
 
 double SetUpParams::getCR() const{
-    return CR;
+    return _CR;
 }

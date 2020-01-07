@@ -22,7 +22,6 @@ int main(){
                 break;
             case 2:
                 problem.read(cin,problem);
-                cout<<endl;
                 break;
             case 3:
                 std::exit;
@@ -30,7 +29,7 @@ int main(){
         choice = menu();
     }
     problem.print(cout, problem);
-    SetUpParams setup = SetUpParams(30, 66, 30, 30);
+    SetUpParams setup = SetUpParams(5, 66, 30, 30);
     Algorithm algoWDEA = Algorithm(problem, setup);
     algoWDEA.main();
 

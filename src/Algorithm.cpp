@@ -1,7 +1,13 @@
 #include "Algorithm.h"
 
 Algorithm::Algorithm(const Problem& pbm, const SetUpParams& setup) : _pbm{pbm}, _setup{setup}
-{}
+{
+    _population.resize(_setup.population_size());
+	for (int i = 0; i < _setup.population_size(); ++i) {
+		Solution *s = new Solution(pbm);
+		_population[i] = s;
+	}
+}
 
 Algorithm::~Algorithm(){
     for(unsigned int i = 0; i < _setup.population_size(); i++)
@@ -15,6 +21,8 @@ const SetUpParams& Algorithm::setup() const{
 void Algorithm::initialize(){
     for(unsigned int i = 0; i < _setup.population_size(); i++){
         _population[i]->initialize();
+        _upper_cost = 29;
+        _lower_cost = 0;
     }
 }
 
@@ -47,20 +55,19 @@ double Algorithm::worstFitness() const{
 
 void Algorithm::main()
 {
-
     //double moy_best_fit = 0.0;
     //double moy_worst_fit = 0.0;
-    std::cout << "\t\t\ Mielleur fitness\t\tPire fitness" << std::endl;
-
+    std::cout << "\t\t\t Best fitness\tWorst fitness" << std::endl;
+   //intialisation qui la population
     for(unsigned int r = 0; r < _setup.independent_runs(); r++)
     {
-        initialize();
         double bestFit = bestFitness();
         double worstFit = worstFitness();
         for( unsigned int iter = 0 ; iter < _setup.nb_evolution_steps(); iter++)
         {
             vector<Solution*> mutants;
-            Solution _sol{_pbm};
+            Solution _sol;
+            _population.resize(_setup.population_size());
             for(unsigned int i = 0; i < _population.size(); i++)
             {
                 default_random_engine g;
@@ -70,17 +77,17 @@ void Algorithm::main()
                 //Generation of a trial population
                 if(_setup.getCR() < random)
                 {
-                    _sol.mutation(i,_population,_setup);
+                    //mutants.push_back( _sol.mutation(i,_population,_setup));
                 }
                 else
                 {
-                    mutants[i] = _population[i];
+                    mutants.push_back( _population[i]);
                 }
             }
             // selection
             for(unsigned int i = 0; i < mutants.size(); i++)
             {
-                for(unsigned int j = 0; j < _setup.solution_size(); j++)
+                for(unsigned int j = 0; j < _setup.population_size(); j++)
                 {
                      mutants[i]->fitness();
                     _population[j]->fitness();
@@ -102,10 +109,10 @@ void Algorithm::main()
             bestFit = bestFitness();
             worstFit = worstFitness();
         }
-        std::cout<<"\t\t\tExecution "<<r+1<<" : "<<bestFit<<"\t\t"<<worstFit<<std::endl;
+        std::cout<<"\tExecution "<<r+1<<" :   \t"<<bestFit<<"\t\t"<<worstFit<<std::endl;
     }
-     std::cout << "\nMoyenne meilleures fitness : " << std::endl;
-     std::cout << "Moyenne pires fitness : " << std::endl;
+    std::cout << "\nMoyenne meilleures fitness : " << std::endl;
+    std::cout << "Moyenne pires fitness : " << std::endl;
 }
 
 

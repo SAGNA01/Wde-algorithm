@@ -9,10 +9,18 @@
 
 Solution::Solution() : _pbm{} {}
 Solution::Solution(const Problem& pbm) : _pbm{pbm}
-{}
+{
+    initialize();
+}
 
-Solution::Solution(const Solution& sol) : _pbm{sol._pbm}// ,_fitness_current{sol._fitness_current}
-{}
+//Solution::Solution(const vector<double>& solution) : _solution{solution}
+//{}
+
+Solution::Solution(const Solution& sol) : _pbm{sol._pbm},_fitness_current{sol._fitness_current}
+{
+    _solution.resize(sol._solution.size());
+	_solution = sol._solution;
+}
 
 void Solution::initialize(){
     _solution.resize((unsigned long long int) _pbm.dimension());
@@ -25,6 +33,8 @@ void Solution::initialize(){
 	    nbAleatoire = _min + k * (_max - _min);
 	    _solution[i] = (nbAleatoire);
 	}
+
+	fitness();
 }
 
 const Problem& Solution::pbm() const{
@@ -51,7 +61,7 @@ void Solution::set_position_in_solution(const int index, const double value){
     _solution[index] = value;
 }
 
-vector<double>  Solution::mutation(int i, vector<Solution*> pop ,SetUpParams setup){
+vector<double> Solution::mutation(int i, vector<Solution*> pop ,SetUpParams setup){
     int a, b, c;
     do{
         a = (int)rand() %setup.population_size();

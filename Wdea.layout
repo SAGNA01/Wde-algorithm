@@ -2,44 +2,24 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+	<File name="src\Wdea.cpp" open="1" top="1" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="668" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="src\Solution.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="129" topLine="4" />
+		</Cursor>
+	</File>
 	<File name="src\Problem.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1521" topLine="13" />
 		</Cursor>
 	</File>
-	<File name="src\SetUpParams.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Benchmark.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1212" topLine="18" />
-		</Cursor>
-	</File>
-	<File name="src\SetUpParams.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="343" topLine="2" />
-		</Cursor>
-	</File>
-	<File name="src\Algorithm.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="621" topLine="13" />
-		</Cursor>
-	</File>
-	<File name="src\Algorithm.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2736" topLine="71" />
-		</Cursor>
-	</File>
-	<File name="src\Benchmark.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="178" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\Solution.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="968" topLine="31" />
-		</Cursor>
-	</File>
-	<File name="src\Solution.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="129" topLine="6" />
+			<Cursor1 position="975" topLine="25" />
 		</Cursor>
 	</File>
 	<File name="src\Problem.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -47,14 +27,34 @@
 			<Cursor1 position="253" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\Wdea.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Algorithm.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="604" topLine="14" />
+			<Cursor1 position="1427" topLine="46" />
 		</Cursor>
 	</File>
-	<File name="src\Benchmark.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Algorithm.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="975" topLine="29" />
+			<Cursor1 position="621" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="src\SetUpParams.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1212" topLine="14" />
+		</Cursor>
+	</File>
+	<File name="src\Solution.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="968" topLine="31" />
+		</Cursor>
+	</File>
+	<File name="src\SetUpParams.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="291" topLine="2" />
+		</Cursor>
+	</File>
+	<File name="src\Benchmark.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="178" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
