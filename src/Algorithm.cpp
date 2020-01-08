@@ -7,6 +7,7 @@ Algorithm::Algorithm(const Problem& pbm, const SetUpParams& setup) : _pbm{pbm}, 
 		Solution *s = new Solution(pbm);
 		_population[i] = s;
 	}
+	evaluate();
 }
 
 Algorithm::~Algorithm(){
@@ -61,12 +62,13 @@ void Algorithm::main()
    //intialisation qui la population
     for(unsigned int r = 0; r < _setup.independent_runs(); r++)
     {
+        initialize();
         double bestFit = bestFitness();
         double worstFit = worstFitness();
         for( unsigned int iter = 0 ; iter < _setup.nb_evolution_steps(); iter++)
         {
+            evaluate();
             vector<Solution*> mutants;
-            Solution _sol;
             _population.resize(_setup.population_size());
             for(unsigned int i = 0; i < _population.size(); i++)
             {

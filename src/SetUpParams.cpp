@@ -41,3 +41,25 @@ void SetUpParams::solution_size(const unsigned int sol_size){
 double SetUpParams::getCR() const{
     return _CR;
 }
+
+istream& operator >> (std::istream& entree, SetUpParams& setup)
+{
+    cout << "number of independent runs (runs): "; entree >> setup._independent_runs;
+    cout << "number of solutions in the population (PopSize) : "; entree >> setup._population_size;
+	cout << "size of each particle (solsize) : "; entree >> setup._solution_size;
+	cout << "number of iterations per run (steps) : "; entree >> setup._nb_evolution_steps;
+    /*if (setup.getPopSize() >= 30)
+	{
+		setup.defineNbItRun(((2 * pow(10, 6)) / setup.getPopSize()));
+	}
+	else{
+		setup.defineNbItRun(3000);
+	}
+	cout << setup.getNbItRun() << endl;
+	cout << "Probabilite de Mutation entre 0 et 1 : ";
+	is >> setup.mixrate;
+	if (setup.mixrate >= 1 || setup.mixrate <= 0)
+		cout << "error" << endl;
+*/
+}
+

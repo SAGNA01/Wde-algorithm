@@ -24,7 +24,7 @@ Solution::Solution(const Solution& sol) : _pbm{sol._pbm},_fitness_current{sol._f
 
 void Solution::initialize(){
     _solution.resize((unsigned long long int) _pbm.dimension());
-	double nbAleatoire, k, _min, _max;
+	 double nbAleatoire, k, _min, _max;
     _min = _pbm.LowerBound();
     _max = _pbm.UpperBound();
 
@@ -62,6 +62,7 @@ void Solution::set_position_in_solution(const int index, const double value){
 }
 
 vector<double> Solution::mutation(int i, vector<Solution*> pop ,SetUpParams setup){
+    pop.resize((unsigned long long int) _pbm.dimension());
     int a, b, c;
     do{
         a = (int)rand() %setup.population_size();

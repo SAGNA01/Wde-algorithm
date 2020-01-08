@@ -1,5 +1,7 @@
 #ifndef SETUPPARAMS_H
 #define SETUPPARAMS_H
+#include<iostream>;
+using namespace std;
 
 class SetUpParams
 {
@@ -16,6 +18,7 @@ class SetUpParams
 		void population_size(const unsigned int pop_size);
 		void solution_size(const unsigned int sol_size);
 		double getCR()const;
+     	friend istream& operator >> (std::istream& entree, SetUpParams& setup);
 
 
     private:

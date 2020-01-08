@@ -4,6 +4,7 @@
 
 Problem::Problem() : _dimension{30}, _LowerBound{}, _UpperBound{}, _fonction{BentCigar}
 {}
+
 Problem::Problem(int dim, double low_bound, double up_bound, Fonction f) : _dimension{dim},
                                                                            _LowerBound{low_bound},
                                                                            _UpperBound{up_bound},
@@ -37,6 +38,7 @@ void Problem::read(std::istream& entree, Problem& pbm){
     {
 	case 1: // BentCigar function
 	    _fonction=BentCigar;
+	    std::cout<<"2 BentCigar function selected"<<std::endl;
 		pbm._LowerBound = -2.048;
 		pbm._UpperBound = 2.048;
 		break;

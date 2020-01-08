@@ -29,7 +29,8 @@ int main(){
         choice = menu();
     }
     problem.print(cout, problem);
-    SetUpParams setup = SetUpParams(5, 66, 30, 30);
+    SetUpParams setup = SetUpParams(0,0,0,0);
+    cin >> setup;
     Algorithm algoWDEA = Algorithm(problem, setup);
     algoWDEA.main();
 

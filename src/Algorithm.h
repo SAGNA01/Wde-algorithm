@@ -29,7 +29,7 @@ class Algorithm
     private:
         vector<Solution*> _population;     // individuals in population
 		vector<double> _fitness_values_of_current_population;
-        //Solution& _sol;
+        Solution _sol;
         const Problem& _pbm;
 		const SetUpParams& _setup;
 		Solution _global_best_solution;
