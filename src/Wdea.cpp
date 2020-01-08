@@ -33,7 +33,6 @@ int main(){
     cin >> setup;
     Algorithm algoWDEA = Algorithm(problem, setup);
     algoWDEA.main();
-
     return 0;
 }
 
