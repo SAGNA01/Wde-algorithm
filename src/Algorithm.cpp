@@ -114,7 +114,6 @@ void Algorithm::main()
         moy_best_fit += bestFit;
 	    moy_worst_fit += worstFit;
     }
-
     double somme = 0.0;
     vector <double> temp;
     temp.resize(_setup.independent_runs());
