@@ -17,14 +17,14 @@ class Algorithm
         void evaluate();     //evaluate the current population
 
 	 	const vector<Solution*>& current_solutions() const;
-		double global_best_cost() const;                                // pas encore defini
+		double global_best_cost() const;
 		Solution& solution(const unsigned int index) const;
 
 		Solution global_best_solution();
 		Solution global_best_solution() const;
 		double bestFitness() const;
 		double worstFitness() const;
- 		void evolution(); // main loop of the algorithm                // pas encore defini
+ 		//void evolution(); // main loop of the algorithm
 		void main();
     private:
         vector<Solution*> _population;     // individuals in population

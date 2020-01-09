@@ -3,7 +3,7 @@
 Algorithm::Algorithm(const Problem& pbm, const SetUpParams& setup) : _pbm{pbm}, _setup{setup}
 {
     _population.resize(_setup.population_size());
-	for (int i = 0; i < _setup.population_size(); ++i) {
+	for (unsigned int i = 0; i < _setup.population_size(); ++i) {
 		Solution *s = new Solution(pbm);
 		_population[i] = s;
 	}
@@ -35,7 +35,6 @@ void Algorithm::evaluate(){
 const vector<Solution*>& Algorithm::current_solutions() const{
     return _population;
 }
-
 //double Algorithm::global_best_cost() const{} // pas encore defini
 
 Solution& Algorithm::solution(const unsigned int index) const{
@@ -43,7 +42,7 @@ Solution& Algorithm::solution(const unsigned int index) const{
 }
 
 Solution Algorithm::global_best_solution() const{
-    return _global_best_solution;                               // A RREVOIR
+    return _global_best_solution;
 }
 
 double Algorithm::bestFitness() const{
@@ -56,8 +55,8 @@ double Algorithm::worstFitness() const{
 
 void Algorithm::main()
 {
-    //double moy_best_fit = 0.0;
-    //double moy_worst_fit = 0.0;
+    double moy_best_fit = 0.0;
+    double moy_worst_fit = 0.0;
     std::cout << "\t\t\t Best fitness\tWorst fitness" << std::endl;
    //intialisation qui la population
     for(unsigned int r = 0; r < _setup.independent_runs(); r++)
@@ -79,7 +78,7 @@ void Algorithm::main()
                 //Generation of a trial population
                 if(_setup.getCR() < random)
                 {
-                    //mutants.push_back( _sol.mutation(i,_population,_setup));
+//                    mutants.push_back(_sol.mutation(i,_population,_setup()));
                 }
                 else
                 {
@@ -112,9 +111,22 @@ void Algorithm::main()
             worstFit = worstFitness();
         }
         std::cout<<"\tExecution "<<r+1<<" :   \t"<<bestFit<<"\t\t"<<worstFit<<std::endl;
+        moy_best_fit += bestFit;
+	    moy_worst_fit += worstFit;
     }
-    std::cout << "\nMoyenne meilleures fitness : " << std::endl;
-    std::cout << "Moyenne pires fitness : " << std::endl;
+
+    double somme = 0.0;
+    vector <double> temp;
+    temp.resize(_setup.independent_runs());
+    for(unsigned int i = 0; i < _setup.independent_runs(); i++)
+    {
+        somme += temp[i];
+    }
+    moy_best_fit = somme/ _setup.independent_runs();
+    moy_worst_fit /= _setup.independent_runs();
+
+    std::cout << "\nMoyenne meilleures fitness : " <<moy_best_fit<< std::endl;
+    std::cout << "Moyenne pires fitness : " << moy_worst_fit << std::endl;
 }
 
 
