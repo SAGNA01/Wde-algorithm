@@ -12,7 +12,6 @@ class Solution
         Solution(vector<double> solution);
         Solution(const Problem& pbm);
 		Solution(const Solution& sol);
-		//Solution(const vector<double>&   solution);
 
 		~Solution() = default;
 		void initialize();

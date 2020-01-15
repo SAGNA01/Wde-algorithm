@@ -2,14 +2,29 @@
 #include"Problem.h"
 #include"Algorithm.h"
 #include"Benchmark.h"
+#include <string>
 using namespace std;
 
 int menu(){
     int input;
     do{
         std::cout<<"1 - Run the function\n2 - Change benchmark function\n3 - Quit"<<std::endl;
-        std::cin>>input;
-    } while(input<1 && input>3);
+        string s;
+        getline(cin,s);
+        try{
+            input = stoi(s);
+        }
+	catch (std::invalid_argument const &e)
+	{
+		input =0;
+	}
+	catch (std::out_of_range const &e)
+	{
+		input = 0;
+	}
+
+
+    } while(((int)input<1 &&(int)input>3) );
     return input;
 }
 int main(){

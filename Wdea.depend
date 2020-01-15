@@ -56,7 +56,7 @@
 	"Benchmark.h"
 	<cmath>
 
-1579122320 source:e:\wde-algorithm\src\algorithm.cpp
+1579123382 source:e:\wde-algorithm\src\algorithm.cpp
 	"Algorithm.h"
 
 1578533226 e:\wde-algorithm\src\algorithm.h
@@ -71,12 +71,12 @@
 	<iostream>
 	<vector>
 
-1579117716 e:\wde-algorithm\src\solution.h
+1579123382 e:\wde-algorithm\src\solution.h
 	<vector>
 	"Problem.h"
 	"SetUpParams.h"
 
-1579115276 e:\wde-algorithm\src\setupparams.h
+1579125612 e:\wde-algorithm\src\setupparams.h
 	<iostream>
 
 1579122124 source:e:\wde-algorithm\src\benchmark.cpp
@@ -107,9 +107,10 @@
 	<fstream>
 	<random>
 
-1579121028 source:e:\wde-algorithm\src\wdea.cpp
+1579126286 source:e:\wde-algorithm\src\wdea.cpp
 	<iostream>
 	"Problem.h"
 	"Algorithm.h"
 	"Benchmark.h"
+	<string>
 

@@ -35,7 +35,6 @@ void Algorithm::evaluate(){
 const vector<Solution*>& Algorithm::current_solutions() const{
     return _population;
 }
-//double Algorithm::global_best_cost() const{} // pas encore defini
 
 Solution& Algorithm::solution(const unsigned int index) const{
     return *_population[index];
@@ -73,7 +72,6 @@ void Algorithm::main()
 	double moy_best_fit = 0.0;
 	double moy_worst_fit = 0.0;
 	std::cout << "\t\t\t Best fitness\tWorst fitness" << std::endl;
-	//intialisation qui la population
 	for (unsigned int r = 0; r < _setup.independent_runs(); r++)
 	{
 		initialize();
@@ -81,7 +79,6 @@ void Algorithm::main()
 		double worstFit = worstFitness();
 		for (unsigned int iter = 0; iter < _setup.nb_evolution_steps(); iter++)
 		{
-			// evaluate();
 			vector<Solution*> mutants;
 
 			for (unsigned int i = 0; i < _population.size(); i++)
@@ -90,7 +87,7 @@ void Algorithm::main()
 				normal_distribution<double> distribution(0.0, 1.0);
 				int random = distribution(g);
 
-				//Generation of a trial population
+				//Mutation and crossover
 				if (_setup.getCR() < random)
 				{
 					Solution s = Solution(_sol.mutation(i, _population, _setup));

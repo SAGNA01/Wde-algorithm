@@ -1,6 +1,6 @@
 #ifndef SETUPPARAMS_H
 #define SETUPPARAMS_H
-#include<iostream>;
+#include<iostream>
 using namespace std;
 
 class SetUpParams
