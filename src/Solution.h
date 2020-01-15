@@ -8,7 +8,8 @@ using namespace std;
 class Solution
 {
     public:
-        Solution();
+		Solution();
+        Solution(vector<double> solution);
         Solution(const Problem& pbm);
 		Solution(const Solution& sol);
 		//Solution(const vector<double>&   solution);
@@ -18,7 +19,7 @@ class Solution
 		const Problem& pbm() const;
 		void fitness();
 		double get_fitness() const;
-		vector<double>& get_solution() const;
+		vector<double> get_solution() const;
 
 		double& get_position_in_solution(const int index);
         void  set_position_in_solution(const int index, const double value);

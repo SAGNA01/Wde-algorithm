@@ -6,9 +6,9 @@
 #include<stdlib.h>
 #include<vector>
 
-float M_PI = 3.141592653589;
-
-
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
 double BentCigar(const std::vector<double>& sol){
     double sum = pow(sol[0],2);
     for(unsigned int i = 2; i <sol.size(); i++){

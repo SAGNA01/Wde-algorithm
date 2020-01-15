@@ -14,7 +14,7 @@ class Problem
         double LowerBound() const;
         double UpperBound() const;
         void print(std::ostream& sortie, const Problem& pbm) const;
-        void read(std::istream& entree, Problem& pbm);
+		void lire(std::istream& ist, Problem& pbm);
         Fonction fonction() const;
         double benchmarks(std::vector<double>& sol);
 

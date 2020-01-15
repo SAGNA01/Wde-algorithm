@@ -25,15 +25,17 @@ Fonction Problem::fonction() const{
    return _fonction;
 }
 
-void Problem::read(std::istream& entree, Problem& pbm){
-    int input;
+void Problem::lire(std::istream& ist, Problem& pbm){
+	int input;
+
     do{
          std::cout<<"1 : BentCigar function\n"<<"2 : Discus function\n"<<"3 : Weierstrass function\n"<<"4 : Katsuura function\n";
          std::cout<<"5 : HappyCat function\n"<<"6 : HGBat function\n";
          std::cout<< "======================================================================" << std::endl;
     	 std::cout <<"       Function Id : ";
+		 ist >> input;
     } while(input< 1 && input>6);
-	    entree>>input;
+	   
     switch (input)
     {
 	case 1: // BentCigar function
@@ -80,7 +82,7 @@ int Problem::dimension() const{
 }
 
 double Problem::LowerBound() const{
-    _LowerBound;
+   return  _LowerBound;
 }
 
 double Problem::UpperBound() const{

@@ -21,7 +21,7 @@ int main(){
             default:
                 break;
             case 2:
-                problem.read(cin,problem);
+                problem.lire(cin,problem);
                 break;
             case 3:
                 std::exit;
@@ -30,7 +30,7 @@ int main(){
     }
     problem.print(cout, problem);
     SetUpParams setup = SetUpParams(0,0,0,0);
-    cin >> setup;
+    std::cin >> setup;
     Algorithm algoWDEA = Algorithm(problem, setup);
     algoWDEA.main();
     return 0;
