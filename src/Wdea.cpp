@@ -23,7 +23,7 @@ int menu(){
 }
 int main(){
     cout<<"**************** Weighted differential evolution algorithm ***********"<<endl;
-    Problem problem = Problem(30, -5, 5, BentCigar);
+    Problem problem = Problem(20, -5, 5, BentCigar);
     int choice = menu();
     while(choice != 1){
         switch(choice){

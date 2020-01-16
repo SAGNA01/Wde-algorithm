@@ -2,7 +2,7 @@
 #include"Benchmark.h"
 #include<cmath>
 
-Problem::Problem() : _dimension{30}, _LowerBound{}, _UpperBound{}, _fonction{BentCigar}
+Problem::Problem() : _dimension{20}, _LowerBound{}, _UpperBound{}, _fonction{BentCigar}
 {}
 
 Problem::Problem(int dim, double low_bound, double up_bound, Fonction f) : _dimension{dim},

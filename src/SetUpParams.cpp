@@ -50,9 +50,7 @@ istream& operator >> (std::istream& entree, SetUpParams& setup)
     cout << "number of independent runs (runs): "; entree >> setup._independent_runs;
     cout << "number of solutions in the population (PopSize) : "; entree >> setup._population_size;
 	//cout << "size of each particle (solsize) : "; entree >> setup._solution_size;
-	cout << "number of iterations per run (steps) : ";
-	setup.set_nb_evolution_steps(((2 * pow(10, 6)) / setup.get_population_size()));
-	std::cout<< setup.get_nb_evolution_steps();
+	cout << "number of iterations per run (steps) : "; entree>> setup._nb_evolution_steps;
 	return entree;
 
 }
