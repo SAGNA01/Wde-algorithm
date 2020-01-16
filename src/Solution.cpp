@@ -6,8 +6,8 @@
 #include<stdlib.h>
 #include <fstream>
 #include<random>
-Solution::Solution() 
-	:_pbm{} {}
+
+Solution::Solution():_pbm{} {}
 
 Solution::Solution(vector<double> solution) : _solution{ solution }, _fitness_current{}, _pbm{} {}
 
@@ -15,9 +15,6 @@ Solution::Solution(const Problem& pbm) : _pbm{pbm}
 {
     initialize();
 }
-
-//Solution::Solution(const vector<double>& solution) : _solution{solution}
-//{}
 
 Solution::Solution(const Solution& sol) : _pbm{sol._pbm},_fitness_current{sol._fitness_current}
 {
@@ -65,7 +62,7 @@ void Solution::set_position_in_solution(const int index, const double value){
 }
 
 vector<double> Solution::mutation(int i, vector<Solution*> pop ,SetUpParams setup){
-   
+
     int a, b, c;
     do{
         a = (int)rand() %setup.population_size();

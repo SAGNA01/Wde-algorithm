@@ -13,16 +13,10 @@ int menu(){
         getline(cin,s);
         try{
             input = stoi(s);
-        }
-	catch (std::invalid_argument const &e)
-	{
-		input =0;
-	}
-	catch (std::out_of_range const &e)
-	{
-		input = 0;
-	}
-
+        }catch (std::invalid_argument const &e)
+	    {
+		  input =0;
+	    }
 
     } while(((int)input<1 &&(int)input>3) );
     return input;
@@ -44,7 +38,7 @@ int main(){
         choice = menu();
     }
     problem.print(cout, problem);
-    SetUpParams setup = SetUpParams(0,0,0,0);
+    SetUpParams setup;
     std::cin >> setup;
     Algorithm algoWDEA = Algorithm(problem, setup);
     algoWDEA.main();

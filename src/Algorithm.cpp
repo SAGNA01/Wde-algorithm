@@ -50,10 +50,8 @@ double Algorithm::bestFitness() const{
 	{
 		if (_population[i]->get_fitness() < best)
 			best = _population[i]->get_fitness();
-
 	}
 	return best;
-
 }
 
 double Algorithm::worstFitness() const{
@@ -62,7 +60,6 @@ double Algorithm::worstFitness() const{
 	{
 		if (_population[i]->get_fitness() > worst)
 			worst = _population[i]->get_fitness();
-
 	}
 	return worst;
 }
@@ -71,7 +68,7 @@ void Algorithm::main()
 {
 	double moy_best_fit = 0.0;
 	double moy_worst_fit = 0.0;
-	std::cout << "\t\t\t Best fitness\tWorst fitness" << std::endl;
+	std::cout << "\t\t\t Best fitness           Worst fitness" << std::endl;
 	for (unsigned int r = 0; r < _setup.independent_runs(); r++)
 	{
 		initialize();
@@ -103,20 +100,16 @@ void Algorithm::main()
 			double score_trail = 0.0;
 			for (unsigned int i = 0; i < mutants.size(); i++)
 			{
-
 				mutants[i]->fitness();
 				_population[i]->fitness();
 				score_trail += mutants[i]->get_fitness();
 				score_init += _population[i]->get_fitness();
-
 			}
 
 			if (score_trail < score_init)
 			{
 				_population = mutants;
-
 			}
-
 		}
 			evaluate();
 			if (bestFitness() < bestFit)
@@ -124,11 +117,10 @@ void Algorithm::main()
 				bestFit = bestFitness();
 				worstFit = worstFitness();
 			}
-			std::cout << "\tExecution " << r + 1 << " :   \t" << bestFit << "\t\t" << worstFit << std::endl;
+			std::cout << "\tExecution " << r + 1 << " : \t" << bestFit << "\t\t" << worstFit << std::endl;
 			moy_best_fit += bestFit;
 			moy_worst_fit += worstFit;
 		}
-
 		double somme = 0.0;
 		vector <double> temp;
 		temp.resize(_setup.independent_runs());
