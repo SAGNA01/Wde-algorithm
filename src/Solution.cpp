@@ -65,15 +65,15 @@ vector<double> Solution::mutation(int i, vector<Solution*> pop ,SetUpParams setu
 
     int a, b, c;
     do{
-        a = (int)rand() %setup.population_size();
+        a = (int)rand() %setup.get_population_size();
     } while (a == i);
 
     do{
-        b = (int)rand() %setup.population_size();
+        b = (int)rand() %setup.get_population_size();
     } while (b == i || b == a);
 
     do{
-        c = (int)rand() %setup.population_size();
+        c = (int)rand() %setup.get_population_size();
     } while (c == i || c == a || c == b);
 
     double F;
@@ -82,7 +82,7 @@ vector<double> Solution::mutation(int i, vector<Solution*> pop ,SetUpParams setu
     F = 3 * distribution(generator);
 
     vector<double> mutant;
-    for(unsigned int j = 0; j < setup.solution_size(); j++)
+    for(unsigned int j = 0; j < setup.get_solution_size(); j++)
     mutant.push_back(pop[i]->get_solution()[j] +
                   (F * pop[b]->get_solution()[j]  -
                    pop[c]->get_solution()[j]));

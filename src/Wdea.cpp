@@ -40,6 +40,7 @@ int main(){
     problem.print(cout, problem);
     SetUpParams setup;
     std::cin >> setup;
+    std::cout<<endl;
     Algorithm algoWDEA = Algorithm(problem, setup);
     algoWDEA.main();
     return 0;

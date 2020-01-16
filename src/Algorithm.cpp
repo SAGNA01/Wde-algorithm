@@ -2,8 +2,8 @@
 
 Algorithm::Algorithm(const Problem& pbm, const SetUpParams& setup) : _pbm{pbm}, _setup{setup}
 {
-    _population.resize(_setup.population_size());
-	for (unsigned int i = 0; i < _setup.population_size(); ++i) {
+    _population.resize(_setup.get_population_size());
+	for (unsigned int i = 0; i < _setup.get_population_size(); ++i) {
 		Solution *s = new Solution(pbm);
 		_population[i] = s;
 	}
@@ -11,7 +11,7 @@ Algorithm::Algorithm(const Problem& pbm, const SetUpParams& setup) : _pbm{pbm}, 
 }
 
 Algorithm::~Algorithm(){
-    for(unsigned int i = 0; i < _setup.population_size(); i++)
+    for(unsigned int i = 0; i < _setup.get_population_size(); i++)
         delete _population[i];
 }
 
@@ -20,7 +20,7 @@ const SetUpParams& Algorithm::setup() const{
 }
 
 void Algorithm::initialize(){
-    for(unsigned int i = 0; i < _setup.population_size(); i++){
+    for(unsigned int i = 0; i < _setup.get_population_size(); i++){
         _population[i]->initialize();
         _upper_cost = 29;
         _lower_cost = 0;
@@ -28,7 +28,7 @@ void Algorithm::initialize(){
 }
 
 void Algorithm::evaluate(){
-    for(unsigned int i = 0; i < _setup.population_size(); i++)
+    for(unsigned int i = 0; i < _setup.get_population_size(); i++)
          _population[i]->fitness();
 }
 
@@ -69,22 +69,20 @@ void Algorithm::main()
 	double moy_best_fit = 0.0;
 	double moy_worst_fit = 0.0;
 	std::cout << "\t\t\t Best fitness           Worst fitness" << std::endl;
-	for (unsigned int r = 0; r < _setup.independent_runs(); r++)
+	for (unsigned int r = 0; r < _setup.get_independent_runs(); r++)
 	{
 		initialize();
 		double bestFit = bestFitness();
 		double worstFit = worstFitness();
-		for (unsigned int iter = 0; iter < _setup.nb_evolution_steps(); iter++)
+		for (unsigned int iter = 0; iter < _setup.get_nb_evolution_steps(); iter++)
 		{
+		    //Mutation and crossover
 			vector<Solution*> mutants;
-
 			for (unsigned int i = 0; i < _population.size(); i++)
 			{
 				default_random_engine g;
 				normal_distribution<double> distribution(0.0, 1.0);
 				int random = distribution(g);
-
-				//Mutation and crossover
 				if (_setup.getCR() < random)
 				{
 					Solution s = Solution(_sol.mutation(i, _population, _setup));
@@ -123,13 +121,13 @@ void Algorithm::main()
 		}
 		double somme = 0.0;
 		vector <double> temp;
-		temp.resize(_setup.independent_runs());
-		for (unsigned int i = 0; i < _setup.independent_runs(); i++)
+		temp.resize(_setup.get_independent_runs());
+		for (unsigned int i = 0; i < _setup.get_independent_runs(); i++)
 		{
 			somme += temp[i];
 		}
-		moy_best_fit /= _setup.independent_runs();
-		moy_worst_fit /= _setup.independent_runs();
+		moy_best_fit /= _setup.get_independent_runs();
+		moy_worst_fit /= _setup.get_independent_runs();
 
 		std::cout << "\nMoyenne meilleures fitness : " << moy_best_fit << std::endl;
 		std::cout << "Moyenne pires fitness : " << moy_worst_fit << std::endl;

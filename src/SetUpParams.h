@@ -9,15 +9,15 @@ class SetUpParams
 	    SetUpParams();
         SetUpParams(unsigned int runs, unsigned int steps, unsigned int pop_size, unsigned int sol_size);
         ~SetUpParams() = default;
-        const unsigned int   independent_runs() const;
-		const unsigned int   nb_evolution_steps() const;
-		const unsigned int   population_size() const;
-		const unsigned int   solution_size() const;
-		void independent_runs(const unsigned int runs);
-		void nb_evolution_steps(const unsigned int steps);
-		void population_size(const unsigned int pop_size);
-		void solution_size(const unsigned int sol_size);
-		double getCR()const;
+        const unsigned int   get_independent_runs() const;
+		const unsigned int   get_nb_evolution_steps() const;
+		const unsigned int   get_population_size() const;
+		const unsigned int   get_solution_size() const;
+		double getCR() const;
+		void set_independent_runs(const unsigned int runs);
+		void set_nb_evolution_steps(const unsigned int steps);
+		void set_population_size(const unsigned int pop_size);
+		void set_solution_size(const unsigned int sol_size);
      	friend istream& operator >> (std::istream& entree, SetUpParams& setup);
 
 
